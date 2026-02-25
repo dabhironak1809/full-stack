@@ -1,0 +1,67 @@
+
+nav {
+    /* background-color: #94b8bd; */
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    background-color: aqua;
+}
+
+nav .logo-box img {
+    width: 185px;
+    height: 30px;
+    margin: 22px 3rem;
+}
+
+.btn-group.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 4.4rem;
+
+}
+
+.yello-btn {
+    background-color: yellow;
+
+    margin-top: 1rem;
+    height: 42px;
+    border-bottom-right-radius: 0rem;
+    border-top-right-radius: 0rem;
+}
+
+.yello-btn:hover {
+    margin-top: 1rem;
+    background-color: yellow;
+    /* margin-top: 0.5rem; */
+    height: 42px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-margin {
+    margin: 1px 3.7rem;
+    gap: 1rem;
+}
+
+.btn {
+    color: rgb(24, 2, 2);
+}
+
+.first-container {
+    display: flex;
+    position: relative;
+    margin: -4.7rem 0px;
+}
+
+.btn-set {
+    top: 8.4rem;
+    right: -2.3rem;
+    position: fixed;
+    transform: rotate(-90deg);
+}
+
+
+/* == */

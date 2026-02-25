@@ -1,0 +1,143 @@
+/* ================= NAVBAR BASE ================= */
+#navbar {
+  width: 100%;
+  height: 70px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hamburger {
+  width: 26px;
+  display: none;
+}
+
+.search {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  background: #f0f5ff;
+  padding: 0 15px;
+  border-radius: 5px;
+}
+
+.search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px;
+}
+
+.search-svg {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.login, .three-dot, .cart, .sellor {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ================= DROPDOWN MENU ================= */
+.dropdown-menu1,
+.dropdown-menu2 {
+  background: #fff;
+  padding: 10px 0;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.dropdown-menu1 li:hover,
+.dropdown-menu2 li:hover {
+  background: #f1f5ff;
+}
+
+/* ================= SMALL SCREEN SEARCH BOX ================= */
+#navbar1 {
+  display: none;
+  padding: 10px;
+  background: #fff;
+}
+
+.search2-svg {
+  width: 20px;
+  margin-right: 10px;
+}
+
+/* ================= RESPONSIVE STYLES ================= */
+@media (max-width: 992px) {
+  .search {
+    width: 55%;
+  }
+
+  .cart,
+  .sellor {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #navbar {
+    height: 60px;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* Hide search bar on navbar */
+  .search {
+    display: none;
+  }
+
+  /* Show mobile search bar */
+  #navbar1 {
+    display: block;
+  }
+
+  /* Never break the layout */
+  .btn-group,
+  .btn-group2 {
+    display: flex;
+    align-items: center;
+  }
+
+  .three-dot img {
+    width: 22px;
+  }
+
+  .login button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-box img:last-child {
+    width: 120px;
+  }
+
+  .login button {
+    font-size: 13px;
+  }
+
+  .dropdown-menu1,
+  .dropdown-menu2 {
+    width: 160px;
+  }
+}

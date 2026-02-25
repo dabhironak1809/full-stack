@@ -1,0 +1,85 @@
+const db = require("../helper/db");
+const { validationResult } = require("express-validator");
+
+const getlogin = async (req, res) => {
+  const result = validationResult(req);
+  if (!result.isEmpty()) {
+    return res.status(400).json({
+      status: 400,
+      errors: result.array(),
+    });
+  }
+
+  const { email, mobile, pass } = req.query;
+
+  try {
+    const q = `
+      SELECT s_id, s_name, s_email, s_mobile 
+      FROM student 
+      WHERE 
+        (s_email = ? OR s_mobile = ?) 
+        AND s_password = ?
+    `;
+
+    db.query(q, [email || mobile, email || mobile, pass], (err, data) => {
+      if (err) {
+        return res.status(500).json({
+          status: 500,
+          message: "Database error",
+          error_type: "error",
+          data: err.message,
+        });
+      }
+
+      if (data.length > 0) {
+        return res.status(200).json({
+          status: 200,
+          message: "Login successful",
+          error_type: "success",
+          user: data[0],
+        });
+      } else {
+        return res.status(401).json({
+          status: 401,
+          message: "Invalid email/mobile or password",
+          error_type: "error",
+        });
+      }
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: 500,
+      message: "Server error",
+      error_type: "error",
+      data: error.message,
+    });
+  }
+};
+
+module.exports = { getlogin };
+
+
+
+
+
+
+
+
+
+
+
+
+const express=require("express");
+const controllers=require("../controller/login");
+const login=express.Router();
+const { query } = require('express-validator');
+
+login.get("/",
+    [
+        query("s_mobile").notEmpty().withMessage("Mobile No. is Required").isMobilePhone().withMessage("Invalid number"),
+        query("s_password").notEmpty().withMessage("Password  is Required")
+    ],
+
+    controllers.getlogin);
+
+module.exports=login;

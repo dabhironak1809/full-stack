@@ -1,0 +1,11 @@
+.con{
+    color: aqua;
+    background-color: blue;
+height: 23rem;
+width: 50rem;
+/* public folder define image */
+/* background-image: url('/public/image_f/back1.jpg'); */
+
+/* srs folder iside define image */
+/* background-image: url('image_f/back1.jpg'); */
+}

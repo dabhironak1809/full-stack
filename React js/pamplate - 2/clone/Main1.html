@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ronak</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="Modal.css">
+    <link rel="stylesheet" href="Media.css">
+<script src="Script.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="logo-box">
+            <img src="logo/download.png" alt="" />
+        </div>
+        <div class="btn1 btn-group nav-margin">
+            <button type="button" class="btn">Home</button>
+
+            <button type="button" class="btn">About</button>
+
+            <div class="btn-group dropdown">
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                    Products
+                </button>
+                <ul class="dropdown-menu ">
+                    <li><a href="#" class="dropdown-item"> Pre Sales AI </a></li>
+                    <li>
+                        <a href="#" class="dropdown-item"> Pre Sales Management </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            Customer Loyalty Management
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item"> Channel Partner Management </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            Marketing Automation & Campaign Management
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item"> CRM Software Management </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            Virtual Site Visit Management
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            Physical Site Visit Management
+                        </a>
+                    </li>
+                    <li><a href="#" class="dropdown-item"> Sales Management </a></li>
+                    <li><a href="#" class="dropdown-item"> Facility Management </a></li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            Commercial Property Management
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="btn">Case Studies</button>
+            <button type="button" class="btn">Work Culture</button>
+            <button type="button" class="btn">Careers</button>
+
+            <button type="button" class="btn yello-btn ">
+                Contact us
+            </button>
+
+            <!--  -->
+        </div>
+        <div class="ham-box">
+            <img src="svg/hamburger1.svg" class="hamburger" alt="">
+        </div>
+        <button type="button" id="btnclickmodal" class="btn btn-set btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myAutoModal">Business Inquiry</button>
+    </nav>
+
+    <!-- ======= -->
+    <div class="con-1">
+        <!--  -->
+        <div id="Carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+            <div class="carousel-inner">
+                <!--  -->
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center justify-content-center hero-slide">
+                        <div class="content content1 ">
+                            <p class="subtitle h5">Absolute CX by Insomniacs Presents</p>
+                            <p class="h1 first-h1">India's First Conversational </p>
+                            <p class="text-yellow">AI for Real Estate</p>
+                            <p class="hashtags">#PreSalesOnSteroids ACX Convo AI</p>
+                            <a href="#" class="radius btn btn-outline-light mt-3">Know More →</a>
+                        </div> 
+                        <div class="carousel-image">
+                            <img src="img/banner1-xl.webp" class="d-block img-fluid" alt="Image 1" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <!-- <div class="carousel-item ">
+                    <div class="d-flex align-items-center justify-content-center hero-slide">
+                        <div class="content ">
+                            <p class="carousel-text">Real Estate Operations & Campaigns
+                            <span class="h1 text-warning">Amplified</span>
+                            </p>
+
+                            <p class="h4">india's only real Estate marketing, data analytics and technology network</p>
+                            <a href="#" class="radius btn btn-outline-light mt-3">Learn More →</a>
+                        </div>
+                        <div class="carousel-video">
+                            <video src="img/video.mp4" class="video-fluid" alt="Image 2" autoplay loop muted></video>
+                        </div>
+                    </div>
+                </div> -->
+                <!--  -->
+            </div>
+        </div>
+    </div>
+    <!-- ======= -->
+
+    <div class="con-2 container-fluid">
+        <div class="left">
+            <div class="inner-text">
+                <p class="cont1">Amplify your Sales Velocity.
+                    While reducing your CAC
+                    (Customer Acquisition Cost)</p>
+                <p class="cont2">At Insomniacs, $ 3 Billion worth of Real estate sales, isn't the only thing that gets
+                    us
+                    excited
+                    and proud.
+                    But, the fact that some of the best of the minds of real estate are 24X7 working towards reducing
+                    CAC for you
+                    is what that keeps us moving....</p>
+                <a href="#" class="radius btn btn-outline-light mt-3">Read More <span class="icon-container"><img
+                            src="i1.svg" alt=""></span></a>
+            </div>
+        </div>
+        <div class="right">
+            <img src="img/back1.webp" alt="">
+        </div>
+    </div>
+
+    <!-- ====== -->
+    <div class="con-3">
+        <div class="left3">
+            <div class="con-text">
+
+                <p class="text1">Want To Reduce Your Operations Cost By A Staggering 30%?</p>
+                <p class="or"><span class="or-text">OR</span></p>
+                <p class="text2">Reduce Your Customer Acquisition Cost By An Impressive 40%?</p>
+
+                <p class="text3">Meet the Ultimate Real Estate Customer Experience Platform : ABSOLUTE CX!</p>
+
+                <p class="text4">While attempting to do so we have digitally transformed many real estate
+                    <br>conglomerates
+                    and are continuously pushing the boundaries to make real estate <br>
+                    sales happen at push of a
+                    button just like e-commerce, are some of the mad targets <br>that we have given to ourselves....
+                </p>
+                <div class="btn-flex">
+
+                    <a href="#" class="radius btn btn-outline-light mt-3">Read More <span class="icon-container"><img
+                                src="i1.svg" alt=""></span></a>
+                    <!-- == -->
+                    <a href="#" class="radius btn  text-dark  mt-3 btn2">Visit AbsoluteCX.com<span
+                            class="icon-container"><img src="i1.svg" alt=""></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="right-3">
+            <img src="img/acx-convo.jpg" alt="">
+        </div>
+    </div>
+    <!--  -->
+    <div class="con-4 ">
+        <div class="main-img">
+            <img src="img/beat-logo-13-06.png" alt="">
+        </div>
+    </div>
+    <!-- ==== -->
+    <div class="con-5">
+        <div class="left5">
+            <div class="text-five">
+                <p class="text-5-1">The Stage Is Set. The Spotlight Is Yours.</p>
+                <p class="text-5-2">
+                    Think You Can Be India's No.1 Real Estate Influencer?</p>
+                <p class="text-5-3">Welcome to Sleepless Rangers Beat - Where Content Becomes Currency & Influence
+                    Shapes Industry.</p>
+                <ul>
+                    <li>50 Handpicked Creators.</li>
+                    <li>₹25 Lakh Up for Grabs.</li>
+                    <li>One-on-One Access to Real Estate Titans.</li>
+                    <li>A Marketing Revolution Fueled by Tech, Content & AI.</li>
+                </ul>
+                <p class="text-5-4">Sleepless Rangers Beat is the ultimate battleground where India's top content
+                    creators and real estate brands collide. A high-stakes competition, it’s a game-changing platform
+                    that gives influencers one-on-one access to leading developers, exclusive brand briefs, and
+                    mentorship from industry icons. With tech, content, and AI at its core, this isn’t just an event -
+                    it’s a revolution in real estate marketing. Are you ready to take the stage?</p>
+                <a href="#" class="radius btn btn-outline-light mt-3">Know More<span class="icon-container"><img
+                            src="i1.svg" alt=""></span></a>
+            </div>
+        </div>
+
+        <div class="right5">
+            <div id="demo" class="carousel carousel1 slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner carousel-inner1">
+                    <div class="carousel-item carousel-item1  active">
+                        <img src="photo/awards-img-2.webp" class="d-block carousel-img" alt="mage 1 not show">
+                    </div>
+                    <div class="carousel-item carousel-item1  ">
+                        <img src="photo/awards-img-4.webp" class="d-block carousel-img" alt="omage 1 not show">
+                    </div>
+                    <div class="carousel-item carousel-item1  ">
+                        <img src="photo/sleepless-rangers-beat.webp" class="d-block carousel-img"
+                            alt="omage 1 not show">
+                    </div>
+                </div>
+                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button type="button" class="carousel-control-next" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button> -->
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="con-6">
+        <p class="h2">Sleepless Rangers</p>
+
+        <div class="con-6-content">
+            <div class="content-container">
+                <p class="original-text">Uncover the Hidden Truth: Why Parth Mehta Chooses Joint Ventures Over Solo
+                    Deals</p>
+                <p class="hover-text">In this exciting new episode, we sit down with Parth Mehta, CMD and Founder of
+                    Paradigm Realty, to explore the inner workings of real estate development.</p>
+            </div>
+
+            <!--  -->
+
+            <div class="content-container">
+                <p class="original-text">Ban Sale of Under Construction Homes: Unmasking Real Estate | Sleepless Rangers
+                    2.0</p>
+                <p class="hover-text">In this brand new episode of Sleepless Rangers 2.O, Vishal Bhargava, our esteemed
+                    Real Estate Columnist sits down with Govind Rai, Co-founder... </p>
+            </div>
+
+            <div class="content-container">
+                <p class="original-text">Broker Network Didn’t Fail — The Ecosystem Did | A PropTech Reality Check</p>
+                <p class="hover-text">Maybe it wasn’t just about governance issues or funding crunches. Maybe Broker
+                    Network was closer to working than most people care to admit.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="con-7">
+        <div class="con-7-img">
+            <img class="i1" src="video_photo/broker-network.webp" alt="">
+            <!-- <img class="play-svg" src="svg/play-button-svgrepo-com.svg" style="width: 4rem;" alt=""> -->
+            <img class="i2" src="video_photo/really-make.webp" alt="">
+            <img class="i3" src="video_photo/season-2-episode1.webp" alt="">
+        </div>
+    </div>
+
+    <!-- == -->
+    <footer>
+        <div class="footer1">
+            <div class="footer-con-1">
+                <div class="link1">
+                    <p><a class="text-warning" href="">HOME</a></p>
+                    <p><a href="">ABOUT</a></p>
+                    <p><a href="">RE BOS MODULES</a></p>
+                    <p><a href="">CASE STUDIES</a></p>
+                    <p><a href="">OUR TEAM</a></p>
+                    <p><a href="">CARRERS</a></p>
+                </div>
+                <div class="link2">
+                    <p><a href="">CONTACT US</a></p>
+                    <p><a href="">BLOG</a></p>
+                    <p><a href="">PRIVACY POLICY</a></p>
+                    <p><a href="">TERMS AND CONDITION</a></p>
+                    <p><a href="">REFUND & CANCELLATION POLICY</a></p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="footer-con-2">
+            <div class="footer-title">
+                <h2>Office Location</h2>
+            </div>
+            <div class="footer-addresh">
+
+                <div class="link3-1">
+                    <h5>Mumbai (Headquarters)</h5>
+                    <p>Insomniacs Digital Private Limited,
+                        203, 2nd Floor,
+                        Ackruti Star, MIDC Central Road,
+                        Andheri East, Mumbai - 400093,
+                        Maharashtra, India</p>
+                </div>
+                <div class="link3-2">
+                    <h5>Bengaluru</h5>
+                    <p>Insomniacs Digital Private Limited,
+                        112, B-Block, BHive Premium HSR Campus,
+                        AKR Tech Park, 7th Mile Hosur Road,
+                        Krishna Reddy Industrial Area,
+                        Bengaluru - 560068,
+                        Karnataka, India</p>
+                </div>
+                <div class="link3-3">
+                    <h5> Delhi</h5>
+                    <p>Insomniacs Digital Private Limited,
+                        Tower A, 9th Floor,
+                        972 Regus,
+                        Spaze Itech Park, Sector 49
+                        Sohna Road, Gurugram - 122018
+                        Haryana, India</p>
+                </div>
+                <div class="link3-4">
+                    <h5> Pune</h5>
+                    <p>Insomniacs Digital Private Limited,
+                        3rd Floor,
+                        Rohan Seher Ln., Awfis ABIL Imperial,
+                        Baner, Pune - 411045,
+                        Maharashtra, India</p>
+                </div>
+                <div class="link3-5">
+                    <h5> Bhavnagar</h5>
+                    <p>Insomniacs Digital Private Limited,
+                        604-609, 6th Floor,
+                        Swara Park Square, Opp. Maldar Villa,
+                        Rupani Circle - Sanskar Mandal Road,
+                        Bhavnagar - 364001,
+                        Gujarat, India</p>
+                </div>
+                <div class="link3-6">
+                    <h5> Surat</h5>
+                    <p>Instance IT Solutions Private Limited,
+                        13-17, 1st Floor,
+                        Shivan Avenue, Causeway Link Rd,
+                        Opp. Hyundai Service Center,
+                        Dabholi Village, Surat - 395004,
+                        Gujarat, India</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-con-3">
+
+            <div class="phone-con">
+                <h4>Phone No.</h4>
+                <div class="phone">
+                    <p>Business inquiry <br>(+91)8888699986</p>
+                    <p>HR <br>(+91)9082668869</p>
+                </div>
+            </div>
+
+
+            <div class="email-con">
+                <h4>Email</h4>
+                <div class="email">
+                    <p>Buisness Inquiry <br>info@insomniacs.in</p>
+                    <p>HR <br>hr@insomniacs.in</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fotter-con-4">
+            <div>#Beinsomniacs</div>
+            <div>|</div>
+            <div>FACEBOOK</div>
+            <div>TWITTER</div>
+            <div>INSTAGRAM</div>
+            <div>LINKEDIN</div>
+        </div>
+        <div class="fotter-con-5">
+
+            <div class="copyright">
+                <div>© 2025 All Rights Reserved by insomniacs</div>
+            </div>
+            <div class="img">
+                <img src="footer_photo/PartnerBadgeClickable.svg" alt="">
+                <img src="footer_photo/meta-business-partner.svg" alt="">
+                <img src="footer_photo/taboola.webp" alt="">
+            </div>
+        </div>
+
+
+    </footer>
+
+
+    <!-- ============ -->
+      <!-- modal starting -->
+    <div class="modal fade" id="myAutoModal" tabindex="-1" aria-labelledby="myAutoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <!-- modal color ... -->
+            <div class="modal-body ">
+                <!-- <div class="left-modal">
+
+                  </div>
+                  <div class="right-modal"></div> -->
+                <div class="left-container">
+
+
+                    <video autoplay muted loop>
+                        <source src="img/video.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="content-overlay">
+
+                        <p class="modal-text">Want India's only <br>
+                            <span class="text-warning">
+                                Real Estate marketing, <br> data analytics
+                                <span class="text-white">and</span> <br>
+                                technology network <br>
+                                <span class="text-white">to work for your brand?</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="right-container">
+                    <div class="form-info">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h3>Business Inquiry</h3>
+                        <input type="text" placeholder="Your First Name*" required>
+                        <hr>
+                        <input type="text" name="" id="" placeholder="Your Last Name*" required>
+                        <hr>
+                        <input type="text" name="" id="" placeholder="Your Phone Number*" required>
+                        <hr>
+                        <input type="email" name="" id="" placeholder="Your Email Address*">
+                        <hr>
+                        <button type="button" class="btn btn-light text-dark">Submit</button>
+                        <hr>
+                        <p>Looking to work for us? <span class="text-warning">Check career options.</span></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal ending -->
+    <!-- ============ -->
+    
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+.carousel-container-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.multi-scroll-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.scroll-item {
+  flex: 0 0 20%; /* visibleItems = 5 => 20% width */
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.scroll-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+  padding: 10px;
+}
+
+.left-arrow {
+  left: 0;
+}
+.right-arrow {
+  right: 0;
+}
+
+.nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

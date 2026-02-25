@@ -1,0 +1,8 @@
+1. click on edit button and pass the unique id
+2. open add component
+
+add component:(inside)
+3. search the unique id from the url and store into variable 
+4. fatch the data from db as per the unique id and store into variable
+5. fill the data into controls
+6. by click on submit button update the record

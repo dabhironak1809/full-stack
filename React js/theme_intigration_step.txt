@@ -1,0 +1,30 @@
+:-> Public folder Work and Execute..
+1. download theme and extract into folder	done
+2. create new react project			done
+3. copy folders provided from theme		done
+4. past into our project-> public folder	done			
+5. copy css link(head tag) from index.html file from our theme folder		done
+6. paste into headtag of our project->public->index.htm(head tag)		done
+7. copy js link (body tag) from index.html file from our theme folder		done
+8. paste into bodytag of our project-> public->index.html(body tag)		done
+
+9. create view folder in out our project src folder				done
+10. create header.jsx, footer.jsx and sidebar.jsx(if provided)			done	
+11. copy code of header part from index.html(download theme) from body tag	done
+12. paste code of header.jax-> return-><div></div>				done
+13. copy code of footer part from index.html(download theme) from body tag	done
+14. paste code into sidebar.jsx -> return -><div></div>				done
+15. copy code of sidbar part from index.html(download theme) from body tag	done
+16.  paste code into sidebar.jsx ->return-><div></div>				done
+
+17. create Demo1.jsx into view folder (just for practice) and type some code.	done
+18. open App.js, import header, fotter, sidebar and Demo1			done
+19. npm install react-router-dom (all new create project to install that)	done
+20. import react-router-dom							done
+
+21. create const variable layout ans assign  header, footer, sidbar and outlet here. done
+22. create const variable variable with the name router ans assign layout first and as childer add path and element of our component like Demo1. 	done
+23. in return part type router provider 		done 
+24. open sidebar.jsx file and import link from react-router-dom		done
+25 assign <link to ="give path in app.js file">Display Name </link>	done
+26. npm start

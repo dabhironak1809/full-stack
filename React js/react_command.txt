@@ -1,0 +1,48 @@
+command 1 :
+npx create-react-app mydemo    (and enter )
+
+command 2: 
+npm create-react-app . (and enter ) (. using to )
+
+//d drive open to js new folder open right click vs code to name on only capital letter 
+
+
+
+
+: cnd using open folder
+
+game to folder open karva mate game te folder ma javu pacho tya path ni jagyaye cmd lakki enter cmd open thai pachi : - code . (enter )  this vs code ma open thai 
+
+
+// project run mate 
+
+npm start  (project run mate)
+
+
+
+
+
+1. npm create react-app my_demo1
+
+cd demo 
+
+npm start
+
+----------------------
+
+2. npm create vite@latest my_demo2
+
+framework :-> react(select)
+
+variant : -> javascript
+
+cd my_demo2
+
+npm install
+
+npm run dev
+
+
+
+
+

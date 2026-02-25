@@ -1,0 +1,226 @@
+/* -default text  */
+.main-text {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* === */
+
+.col-heading {
+  width: 85%;
+}
+
+.social-icon {
+  margin: 1px -12px;
+}
+
+.t-adjust1 {
+  margin: 1px 0rem;
+}
+
+.t-adjust {
+  margin: 1px 0px;
+}
+
+.img-text {
+  width: 68rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.ccon-flex {
+  display: flex;
+}
+
+.tbold-c {
+  font-weight: 500;
+  color: rgb(0 0 0);
+  font-size: 1.025rem;
+}
+
+.c-flex {
+  display: flex;
+  gap: 2rem;
+}
+
+.navfont {
+  font-weight: 900;
+  color: rgb(21, 21, 21);
+  font-size: 17.5px;
+}
+
+
+
+.mt {
+  margin: 13px 0px;
+}
+
+.tbold {
+  font-weight: 700;
+  color: rgb(0 0 0);
+  font-size: 1.325rem;
+  /* margin: 1px 9px; */
+}
+
+.texbold {
+  font-weight: 500;
+  color: rgb(0 0 0);
+  font-size: 1.725rem;
+}
+
+.tbold {
+  font-weight: 700;
+  color: rgb(0 0 0);
+  font-size: 1.325rem;
+  margin: 1px 5px;
+}
+
+.mar {
+  margin-top: 45px;
+}
+
+
+
+body {
+  overflow-x: hidden;
+}
+
+.h5-color {
+  font-size: 1.3rem;
+  color: rgb(30 58 138);
+}
+
+
+.logo-box {
+  max-width: 16rem;
+}
+
+nav {
+  min-height: 5.5rem;
+  min-width: 92.6rem;
+}
+
+.line1 {
+  font-weight: bold;
+}
+
+
+
+.nav .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  /* optional: remove dropdown animation delay */
+}
+
+
+.lh-line {
+
+  position: relative;
+  left: 4rem;
+
+}
+
+/* hamburger css define and media query .. */
+
+
+@media (max-width: 768px) {
+  .btn1 {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+  }
+
+  .btn1.show {
+    display: flex;
+  }
+
+  .ham-box {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* Optional: Show nav normally on large screens */
+@media (min-width: 769px) {
+  .btn1 {
+    display: flex !important;
+  }
+
+  .ham-box {
+    display: none;
+  }
+}
+
+/*  */
+
+/* [data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    transition-timing-function: ease;
+}
+[data-aos][data-aos][data-aos-duration="800"], body[data-aos-duration="800"] [data-aos] {
+    transition-duration: 3s;
+}
+[data-aos^=fade][data-aos^=fade] {
+    opacity: 0;
+    transition-property: opacity,transform;
+}
+[data-aos=fade-up] {
+    transform: translate3d(0,100px,0);
+} */
+
+
+.btn-group.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 5.4rem;
+  /* adjust a drop down menu alignment */
+  left: 1rem;
+}
+
+/* <nav>
+    <div class="logo-box">
+        <img class="logo" src="image/azzip-blue1.png" alt="">
+    </div>
+    <div class="btn1 btn-group"> 
+        <button type="button" class="b1 btn btn11 tbold btn-ht bb1">Home</button>
+        
+        <div class="btn-group dropdown">
+            <button type="button" class="b1 btn btn11 tbold dropdown-toggle" data-bs-toggle="dropdown">
+                About US
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item tbold text-dark p-2">About us</a></li>
+                <li><a href="#" class="dropdown-item tbold text-dark p-2">CEO</a></li>
+                <li><a href="#" class="dropdown-item tbold text-dark p-2">Social Activity</a></li>
+                <li><a href="#" class="dropdown-item tbold text-dark p-2">team </a></li>
+                <li><a href="#" class="dropdown-item tbold text-dark p-2">Customer</a></li>
+            </ul>
+        </div>
+        
+        <div class="btn-group dropdown">
+            <button type="button" class="b1 btn btn11 tbold dropdown-toggle" data-bs-toggle="dropdown">
+                Services
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item text-dark tbold p-2">eLogbook</a></li>
+                <li><a href="#" class="dropdown-item text-dark tbold p-2">elogbook and LMS</a></li>
+                </ul>
+        </div>
+
+        <div class="btn-group dropdown">
+            <button type="button" class="b1 tbold btn btn11 dropdown-toggle" data-bs-toggle="dropdown">
+                Technologies
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="tbold dropdown-item text-dark p-2">React.js</a></li>
+                </ul>
+        </div>
+
+        <button type="button" class="b1 btn b1 tbold">Gallery</button>
+        <button type="button" class="b1 btn b1 tbold">Blogs</button>
+        <button type="button" class="b1 bm1 btn m b1 tbold">contact</button>
+    </div>
+
+    <div class="ham-box">
+        <img src="sign/hamburger1.svg" class="hamburger" alt="">
+    </div>
+</nav> */

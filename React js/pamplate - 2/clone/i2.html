@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insomniacs - Conversational AI for Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: white;
+            background-color: #000;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Slightly transparent */
+            position: fixed;
+            width: calc(100% - 100px);
+            /* Adjust for padding */
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 40px;
+            /* Adjust as needed */
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar nav ul li {
+            margin-right: 30px;
+            position: relative;
+            /* For dropdown */
+        }
+
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .navbar nav ul li a:hover {
+            color: #ffd700;
+            /* Gold-like hover */
+        }
+
+        /* Dropdown specific styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-top: 3px solid #ffd700;
+        }
+
+        .dropdown-content a {
+            color: white !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .contact-btn {
+            background-color: #ffd700;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #e0b800;
+        }
+
+        .business-inquiry {
+            background-color: #007bff;
+            /* Example color for the vertical bar */
+            color: white;
+            padding: 10px 15px;
+            writing-mode: vertical-lr;
+            /* Vertical text */
+            text-orientation: mixed;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px 0 0 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            min-height: 100vh;
+            /* Full viewport height */
+            align-items: center;
+            padding-top: 80px;
+            /* To account for fixed navbar */
+            background-color: #000;
+            overflow: hidden;
+            /* To handle image overflow */
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-left: 50px;
+            max-width: 50%;
+            /* Adjust width */
+            z-index: 1;
+            /* Ensure text is above image */
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin: 0;
+            line-height: 1.1;
+            color: white;
+        }
+
+        .hero-content .hashtags {
+            font-size: 1.2em;
+            color: #ffd700;
+            /* Gold-like color */
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        .know-more-btn {
+            background: none;
+            border: 2px solid white;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .know-more-btn:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .hero-image-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Make sure container takes full height for image */
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            /* Or adjust to fill container */
+            height: 100%;
+            object-fit: cover;
+            /* Cover the container */
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.7;
+            /* Make it slightly darker */
+        }
+
+        .image-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            /* You would position your icons here using absolute positioning within this container */
+            /* Example for one icon */
+            .chat-icon {
+                position: absolute;
+                top: 20%;
+                left: 60%;
+                width: 50px;
+                /* Size of your icon */
+                height: 50px;
+                background-image: url('chat-icon.png');
+                /* Your icon image */
+                background-size: cover;
+            }
+
+            /* Add similar styles for other icons */
+        }
+
+        /* You'll need to create the actual icon images (e.g., chat-icon.png, house-icon.png, data-icon.png) */
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 20px;
+                position: relative;
+                width: auto;
+            }
+
+            .navbar nav ul {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            .navbar nav ul li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 150px;
+                /* Adjust for larger navbar */
+            }
+
+            .hero-content {
+                max-width: 90%;
+                padding-left: 0;
+                margin-bottom: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-image-container {
+                height: 50vh;
+                /* Adjust height for mobile */
+            }
+
+            .business-inquiry {
+                writing-mode: horizontal-tb;
+                position: static;
+                transform: none;
+                margin-top: 10px;
+                border-radius: 5px;
+            }
+        }
+    </style>
+    <script>
+
+        // image and content automatic change ....
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroTitle = document.getElementById('hero-title');
+            const heroHashtags = document.getElementById('hero-hashtags');
+            const heroMainImage = document.getElementById('hero-main-image');
+
+            const contentData = [
+                {
+                    title: "India's First Conversational AI for Real Estate",
+                    hashtags: "#PreSalesOnSteroids ACX Convo AI",
+                    image: "img/banner1-xl.webp" // Make sure this image exists
+                },
+                {
+                    title: "Transforming Customer Experience in Property",
+                    hashtags: "#SmartLeads #AIpoweredInsights",
+                    image: "img/banner1-xl.webp" // Make sure this image exists
+                },
+                {
+                    title: "24/7 Virtual Assistant for Real Estate Agents",
+                    hashtags: "#AlwaysOn #AutomatedSales",
+                    image: "img/banner1-xl.webp" // Make sure this image exists
+                }
+            ];
+
+            let currentIndex = 0;
+
+            function updateHeroContent() {
+                const data = contentData[currentIndex];
+                heroTitle.textContent = data.title;
+                heroHashtags.textContent = data.hashtags;
+                heroMainImage.src = data.image;
+
+                currentIndex = (currentIndex + 1) % contentData.length; // Cycle through the array
+            }
+
+            // Call updateHeroContent immediately to set initial state
+            updateHeroContent();
+
+            // Set an interval to change content every 5 seconds (5000 milliseconds)
+            setInterval(updateHeroContent, 5000);
+        });
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="insomniacs-logo.png" alt="Insomniacs Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Products ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#">Product 1</a>
+                        <a href="#">Product 2</a>
+                    </div>
+                </li>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Work Culture</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </nav>
+        <button class="contact-btn">Contact Us</button>
+        <div class="business-inquiry">Business Inquiry</div>
+    </header>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <p class="subtitle">Absolute CX by Insomniacs Presents</p>
+            <h1 id="hero-title">India's First Conversational AI for Real Estate</h1>
+            <p class="hashtags" id="hero-hashtags">#PreSalesOnSteroids ACX Convo AI</p>
+            <button class="know-more-btn">Know More →</button>
+        </div>
+        <div class="hero-image-container">
+            <img id="hero-main-image" src="img/banner1-xl.webp" alt="Conversational AI Woman">
+            <div class="image-overlay">
+                <div class="overlay-icon chat-icon"></div>
+                <div class="overlay-icon house-icon"></div>
+                <div class="overlay-icon data-icon"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

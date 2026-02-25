@@ -1,0 +1,735 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+export default function AdminProducts() {
+  const navigate = useNavigate();
+
+  const [showForm, setShowForm] = useState(false);
+  const [showForm1, setShowForm1] = useState(false);
+  const [showForm2, setShowForm2] = useState(false);
+
+  const [activeCategory, setActiveCategory] = useState("");
+
+  const [name, setname] = useState();
+  const [description, setdescription] = useState();
+  const [price, setprice] = useState();
+
+  const [mendata, setmendata] = useState([]);
+  const [mobiledata, setmobiledata] = useState([]);
+  const [kitchandata, setkitchandata] = useState([]);
+
+  useEffect(() => {
+    getmendata();
+    getmobiledata();
+    getkitchandata();
+
+  }, [])
+
+
+  const openForm = (cat) => {
+    setActiveCategory(cat);
+
+    if (cat === "men") {
+      setShowForm(true);
+      setShowForm1(false);
+      setShowForm2(false);
+    } else if (cat === "mobile") {
+      setShowForm(false);
+      setShowForm1(true);
+      setShowForm2(false);
+    } else if (cat === "kitchen") {
+      setShowForm(false);
+      setShowForm1(false);
+      setShowForm2(true);
+    }
+  };
+
+
+  const closeForm = () => {
+    setShowForm(false);
+    setShowForm1(false);
+    setShowForm2(false);
+    setActiveCategory("");
+  };
+
+
+  // men products manage code ==========
+
+
+  const getmendata = async () => {
+    const res = await axios.get("http://localhost:1111/men")
+    setmendata(res.data)
+  }
+
+  // const insertproducts = async () => {
+  //   console.log(name);
+  //   console.log(description);
+  //   console.log(price);
+
+  //   const res = await axios.post("http://localhost:1111/men", {
+  //     name, description, price
+  //   })
+  //   alert("data inserted")
+  // getproducts();
+  //   // const Data = res?.data
+  //   // if (Data) {
+  //   //   alert("data inserted")
+  //   //   navigate("/adminproducts")
+  //   // } else {
+
+  //   // }
+
+  // }
+  const insertmendata = async () => {
+    const res = await axios.post("http://localhost:1111/men", {
+      name, description, price
+    });
+
+    if (res.data) {
+      alert("Product inserted successfully!");
+
+      // 👇 Refresh the list instantly
+      getmendata();
+
+      // Reset form
+      closeForm();
+      // setname("");
+      // setdescription("");
+      // setprice("");
+    }
+  };
+
+  const deletemendata = async (men_id) => {
+
+    const res = await axios.delete("http://localhost:1111/men/" + men_id);
+    alert(res.data);
+    getmendata();
+
+  }
+
+  // ======================= > MOBILE catogory Manage ..
+
+  const getmobiledata = async () => {
+    const res = await axios.get("http://localhost:1111/mobile");
+    setmobiledata(res.data)
+  }
+
+  const insermobiledata = async () => {
+    const res = await axios.post("http://localhost:1111/mobile", {
+      name, description, price
+    });
+    if (res.data) {
+      alert("mobile catogory data inserted");
+      getmobiledata()
+      closeForm();
+    }
+  }
+
+  const deletemobiledata = async (mobile_id) => {
+    const res = await axios.delete("http://localhost:1111/mobile/" + mobile_id);
+    alert(res.data)
+    getmobiledata();
+  }
+
+  // =================== kitchan catogory Manage 
+
+  const getkitchandata = async () => {
+    const res = await axios.get("http://localhost:1111/kitchan");
+    setkitchandata(res.data)
+  }
+
+  const insertkitchandata = async () => {
+    const res = await axios.post("http://localhost:1111/kitchan", {
+      name, description, price
+
+    });
+    if(res.data){
+      alert("kitchan data inserted")
+      getkitchandata();
+      closeForm()
+
+    }
+
+  }
+  
+  const deletekitchandata = async (kitchan_id)=>{
+    const res = await axios.delete("http://localhost:1111/kitchan/"+kitchan_id);
+    alert(res.data);
+    getkitchandata();
+
+  }
+
+  return (
+    <div className="container m-top">
+      <h2>📦 Admin Product Management</h2>
+      {/* ============================================ */}
+
+      {/* ================= MEN Products */}
+
+      {/* =================== */}
+      {/* Show form only when Add is clicked */}
+
+      {showForm && (
+        <div className="card p-3 mb-4">
+          <h4>➕ Add {activeCategory.toUpperCase()} Product</h4>
+
+          <input
+            type="text"
+            placeholder="Product Name"
+            className="form-control mb-2" onChange={(e) => setname(e.target.value)}
+          />
+
+          <textarea
+            placeholder="Product Description"
+            className="form-control mb-2"
+            rows="3" onChange={(e) => setdescription(e.target.value)}
+          ></textarea>
+
+          <input
+            type="number"
+            placeholder="Price ₹"
+            className="form-control mb-2" onChange={(e) => setprice(e.target.value)}
+          />
+
+          <input
+            type="file"
+            accept="image/*"
+            className="form-control mb-2"
+          />
+          {/* <input
+              type="text"
+              placeholder="Extra Field (Size / Brand / Material)"
+              className="form-control mb-2"
+            /> */}
+          {/* 
+              <input
+                type="text"
+                className="form-control mb-2"
+                value={activeCategory}
+                disabled
+              /> */}
+
+          <button className="btn btn-success" onClick={insertmendata}>✔ Save</button>
+          <button className="btn btn-secondary ms-2" onClick={closeForm}>
+            ❌ Cancel
+          </button>
+        </div>
+
+      )}
+      {/*  */}
+      <div className="mb-4">
+        <h3>MEN Products</h3>
+        <button
+          className="btn btn-primary mb-2"
+          onClick={() => openForm("men")}
+        >
+          ➕ Add Men Product
+        </button>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Details</th>
+              <th>Price ₹</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {mendata.map((product) => (
+
+              <tr>
+                <td>{product.name}</td>
+                <td>{product.description}</td>
+                <td>{product.price}</td>
+                <td>
+                  <button className="btn btn-warning btn-sm">Edit</button>{" "}
+                  <button className="btn btn-danger btn-sm" onClick={() => deletemendata(product.men_id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+
+          </tbody>
+        </table>
+      </div>
+
+      {/* ========================= MOBILE Products */}
+
+      {showForm1 && (
+        <div className="card p-3 mb-4">
+          <h4>➕ Add {activeCategory.toUpperCase()} Product</h4>
+
+          <input
+            type="text"
+            placeholder="Product Name"
+            className="form-control mb-2" onChange={(e) => setname(e.target.value)}
+          />
+
+          <textarea
+            placeholder="Product Description"
+            className="form-control mb-2"
+            rows="3" onChange={(e) => setdescription(e.target.value)}
+          ></textarea>
+
+          <input
+            type="number"
+            placeholder="Price ₹"
+            className="form-control mb-2" onChange={(e) => setprice(e.target.value)}
+          />
+
+          <input
+            type="file"
+            accept="image/*"
+            className="form-control mb-2"
+          />
+
+
+          {/* <input
+                type="text"
+                placeholder="Extra Field (Size / Brand / Material)"
+                className="form-control mb-2"
+              /> */}
+          {/* 
+                  <input
+                    type="text"
+                    className="form-control mb-2"
+                    value={activeCategory}
+                    disabled
+                  /> */}
+
+          <button className="btn btn-success" onClick={insermobiledata}>✔ Save</button>
+          <button className="btn btn-secondary ms-2" onClick={closeForm}>
+            ❌ Cancel
+          </button>
+        </div>
+
+      )}
+      {/* ==== */}
+      <div className="mb-4">
+        <h3>MOBILE Products</h3>
+        <button
+          className="btn btn-primary mb-2"
+          onClick={() => openForm("mobile")}
+        >
+          ➕ Add Mobile Product
+        </button>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price ₹</th>
+              <th>Details</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {mobiledata.map((items) => (
+
+              <tr>
+                <td>{items.name}</td>
+                <td>{items.description}</td>
+                <td>{items.price}</td>
+                <td>
+                  <button className="btn btn-warning btn-sm">Edit</button>{" "}
+                  <button className="btn btn-danger btn-sm" onClick={() => deletemobiledata(items.mobile_id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+
+      {/* =================================== KITCHEN Products */}
+      {showForm2 && (
+        <div className="card p-3 mb-4">
+          <h4>➕ Add {activeCategory.toUpperCase()} Product</h4>
+
+          <input
+            type="text"
+            placeholder="Product Name"
+            className="form-control mb-2" onChange={(e) => setname(e.target.value)}
+          />
+
+          <textarea
+            placeholder="Product Description"
+            className="form-control mb-2"
+            rows="3" onChange={(e) => setdescription(e.target.value)}
+          ></textarea>
+
+          <input
+            type="number"
+            placeholder="Price ₹"
+            className="form-control mb-2" onChange={(e) => setprice(e.target.value)}
+          />
+
+          <input
+            type="file"
+            accept="image/*"
+            className="form-control mb-2"
+          />
+
+
+          {/* <input
+                type="text"
+                placeholder="Extra Field (Size / Brand / Material)"
+                className="form-control mb-2"
+              /> */}
+          {/* 
+                  <input
+                    type="text"
+                    className="form-control mb-2"
+                    value={activeCategory}
+                    disabled
+                  /> */}
+
+          <button className="btn btn-success" onClick={insertkitchandata}>✔ Save</button>
+          <button className="btn btn-secondary ms-2" onClick={closeForm}>
+            ❌ Cancel
+          </button>
+        </div>
+
+      )}
+      {/* === */}
+      <div className="mb-4">
+        <h3>KITCHEN Products</h3>
+        <button
+          className="btn btn-primary mb-2"
+          onClick={() => openForm("kitchen")}
+        >
+          ➕ Add Kitchen Product
+        </button>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price ₹</th>
+              <th>Details</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {kitchandata.map((item) => (
+
+              <tr>
+                <td>{item.name}</td>
+                <td>{item.description}</td>
+                <td>{item.price}</td>
+                <td>
+                  <button className="btn btn-warning btn-sm">Edit</button>{" "}
+                  <button className="btn btn-danger btn-sm" onClick={()=>deletekitchandata(item.kitchan_id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+// ======= =============================>>>>>>
+
+// import React, { useState } from "react";
+
+// export default function AdminProducts() {
+//   const [activeCategory, setActiveCategory] = useState(null);
+//   const [isEdit, setIsEdit] = useState(false); // Edit mode toggle
+//   const [showForm, setShowForm] = useState(false); // Show form
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     price: "",
+//     details: "",
+//   });
+
+//   const categories = ["men", "women", "mobile", "laptop", "child", "kitchen"];
+
+//   // Open Add Form
+//   const openAddForm = (cat) => {
+//     setActiveCategory(cat);
+//     setIsEdit(false);
+//     setFormData({ name: "", price: "", details: "" });
+//     setShowForm(true);
+//   };
+
+//   // Open Edit Form with sample data
+//   const openEditForm = (cat) => {
+//     setActiveCategory(cat);
+//     setIsEdit(true);
+//     setFormData({ name: "Sample Product", price: "999", details: "Sample Detail" });
+//     setShowForm(true);
+//   };
+
+//   // Close Form
+//   const closeForm = () => {
+//     setShowForm(false);
+//     setIsEdit(false);
+//   };
+
+//   return (
+//     <div className="container m-top">
+//       <h2>📦 Admin Product Management</h2>
+
+//       {categories.map((cat) => (
+//         <div
+//           key={cat}
+//           className="mb-4 p-3"
+//           style={{ border: "1px solid #ccc", borderRadius: "10px" }}
+//         >
+//           {/* Category Title and Add Button */}
+//           <div className="d-flex justify-content-between align-items-center">
+//             <h3>{cat.toUpperCase()} Products</h3>
+//             <button className="btn btn-primary" onClick={() => openAddForm(cat)}>
+//               ➕ Add {cat.toUpperCase()} Product
+//             </button>
+//           </div>
+
+//           {/* Form UI */}
+//           {showForm && activeCategory === cat && (
+//             <div className="card p-3 mt-2">
+//               <h4>{isEdit ? `✏ Edit ${cat} Product` : `➕ Add ${cat} Product`}</h4>
+
+//               <input
+//                 type="text"
+//                 className="form-control mb-2"
+//                 placeholder="Product Name"
+//                 value={formData.name}
+//                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+//               />
+
+//               <input
+//                 type="number"
+//                 className="form-control mb-2"
+//                 placeholder="Price ₹"
+//                 value={formData.price}
+//                 onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+//               />
+
+//               {/* Category Specific Field */}
+//               {cat === "men" && (
+//                 <input
+//                   type="text"
+//                   className="form-control mb-2"
+//                   placeholder="Size (e.g. L)"
+//                 />
+//               )}
+//               {cat === "mobile" && (
+//                 <input
+//                   type="text"
+//                   className="form-control mb-2"
+//                   placeholder="Brand (Samsung)"
+//                 />
+//               )}
+
+//               {/* Buttons */}
+//               <button className="btn btn-success">
+//                 {isEdit ? "✔ Update" : "✔ Save"}
+//               </button>
+//               <button className="btn btn-secondary ms-2" onClick={closeForm}>
+//                 ❌ Cancel
+//               </button>
+//             </div>
+//           )}
+
+//           {/* Static Table */}
+//           <table className="table mt-3">
+//             <thead>
+//               <tr>
+//                 <th>Image</th>
+//                 <th>Name</th>
+//                 <th>Price ₹</th>
+//                 <th>Details</th>
+//                 <th>Actions</th>
+//               </tr>
+//             </thead>
+//             <tbody>
+//               <tr>
+//                 <td>📷</td>
+//                 <td>Sample Product</td>
+//                 <td>₹999</td>
+//                 <td>
+//                   {cat === "men" && "Size: L"}
+//                   {cat === "mobile" && "Brand: Samsung"}
+//                   {cat === "laptop" && "Brand: Dell"}
+//                   {cat === "women" && "Size: M"}
+//                   {cat === "child" && "Age 5-10"}
+//                   {cat === "kitchen" && "Steel"}
+//                 </td>
+//                 <td>
+//                   <button
+//                     className="btn btn-warning btn-sm"
+//                     onClick={() => openEditForm(cat)}
+//                   >
+//                     ✏ Edit
+//                   </button>{" "}
+//                   <button className="btn btn-danger btn-sm">🗑 Delete</button>
+//                 </td>
+//               </tr>
+//             </tbody>
+//           </table>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+
+
+
+// == this code for image show and upload for backend 
+
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+
+// export default function AdminProducts() {
+
+//   const [showForm, setShowForm] = useState(false);
+//   const [activeCategory, setActiveCategory] = useState("");
+
+//   const [name, setname] = useState("");
+//   const [description, setdescription] = useState("");
+//   const [price, setprice] = useState("");
+//   const [image, setimage] = useState(null);
+
+//   const [mendata, setmendata] = useState([]);
+
+//   const serverURL = "http://localhost/uploads/";
+
+//   useEffect(() => {
+//     getmendata();
+//   }, []);
+
+//   const openForm = (cat) => {
+//     setActiveCategory(cat);
+//     setShowForm(true);
+//   };
+
+//   const closeForm = () => {
+//     setShowForm(false);
+//     setActiveCategory("");
+//     setname("");
+//     setdescription("");
+//     setprice("");
+//     setimage(null);
+//   };
+
+//   // ---------- GET MEN DATA ----------
+//   const getmendata = async () => {
+//     const res = await axios.get("http://localhost:1111/men");
+//     setmendata(res.data);
+//   };
+
+//   // ---------- INSERT MEN DATA WITH IMAGE ----------
+//   const insertmendata = async () => {
+//     const formData = new FormData();
+
+//     formData.append("name", name);
+//     formData.append("description", description);
+//     formData.append("price", price);
+//     formData.append("image", image);
+
+//     const res = await axios.post("http://localhost:1111/men", formData, {
+//       headers: { "Content-Type": "multipart/form-data" },
+//     });
+
+//     if (res.data.success) {
+//       alert("Product inserted successfully!");
+//       getmendata();
+//       closeForm();
+//     }
+//   };
+
+//   // ---------- DELETE ----------
+//   const deletemendata = async (id) => {
+//     await axios.delete(`http://localhost:1111/men/${id}`);
+//     getmendata();
+//   };
+
+//   return (
+//     <div className="container m-top">
+//       <h2>Admin Product Management</h2>
+
+//       {showForm && (
+//         <div className="card p-3 mb-4">
+//           <h4>Add Product ({activeCategory.toUpperCase()})</h4>
+
+//           <input type="text" placeholder="Name" className="form-control mb-2"
+//             value={name}
+//             onChange={(e) => setname(e.target.value)}
+//           />
+
+//           <textarea placeholder="Description"
+//             className="form-control mb-2"
+//             value={description}
+//             onChange={(e) => setdescription(e.target.value)}
+//           />
+
+//           <input type="number" placeholder="Price"
+//             className="form-control mb-2"
+//             value={price}
+//             onChange={(e) => setprice(e.target.value)}
+//           />
+
+//           <input type="file"
+//             className="form-control mb-2"
+//             accept="image/*"
+//             onChange={(e) => setimage(e.target.files[0])}
+//           />
+
+//           <button className="btn btn-success" onClick={insertmendata}>Save</button>
+//           <button className="btn btn-secondary ms-2" onClick={closeForm}>Cancel</button>
+//         </div>
+//       )}
+
+//       {/* DISPLAY MEN PRODUCTS */}
+//       <h3>Men Products</h3>
+//       <button className="btn btn-primary mb-2" onClick={() => openForm("men")}>
+//         Add Men Product
+//       </button>
+
+//       <table className="table">
+//         <thead>
+//           <tr>
+//             <th>Image</th>
+//             <th>Name</th>
+//             <th>Details</th>
+//             <th>Price ₹</th>
+//             <th>Actions</th>
+//           </tr>
+//         </thead>
+
+//         <tbody>
+//           {mendata.map((p) => (
+//             <tr key={p.men_id}>
+//               <td>
+//                 <img
+//                   src={serverURL + p.image}
+//                   width="80"
+//                   height="80"
+//                   style={{ objectFit: "cover", borderRadius: "5px" }}
+//                 />
+//               </td>
+
+//               <td>{p.name}</td>
+//               <td>{p.description}</td>
+//               <td>₹{p.price}</td>
+
+//               <td>
+//                 <button className="btn btn-danger btn-sm"
+//                   onClick={() => deletemendata(p.men_id)}
+//                 >
+//                   Delete
+//                 </button>
+//               </td>
+//             </tr>
+//           ))}
+//         </tbody>
+
+//       </table>
+//     </div>
+//   );
+// }

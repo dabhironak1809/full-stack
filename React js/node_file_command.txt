@@ -1,0 +1,41 @@
+
+
+first create a folder
+to create two diffrent folder [Modules,Controllers]
+
+1. models inside create a student.js and right down code 
+
+npm init -y
+
+npm i mysqli :=> database
+
+npm i express :=>for server
+
+npm i cors  :=> for permission
+
+npm i nodemon :=> for live server
+
+npm i axios
+
+///-- globally automatic website run on your pc .
+
+npm i -g nodemon :=>this install a nodemon on globally of your pc.
+
+// ana thi globally server automatic run thai
+powecell ma nodemon ne permisiion mate :-> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
+
+and run this code :=> nodemon <file_name> or second method to run go pakage.json debug to write "start":nodemon index and terminal npm start to that code run 
+
+
+
+thunder client ma a link nakhvi: http://localhost:3000/student
+http://localhost:3000/student/2
+  this data insert :-> (query lakhvi ){
+  "name": "testt",
+  "email": "test",
+  "mobile":"12234"
+}
+
+drive link : -> https://drive.google.com/file/d/14Z68w5Dz6OoTLVAvgc6pCk_hzdTviWfq/view
+
+	 : 2 . -> https://drive.google.com/file/d/1zjSXP3UupzJchL4AVMFq8EOcf7BhSZnp/view?ts=68de1d07

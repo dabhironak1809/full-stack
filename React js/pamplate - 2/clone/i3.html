@@ -1,0 +1,388 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container d-flex">
+                    <div class="left-content">
+                        <h2>Title 1</h2>
+                        <p>Content for the first slide.</p>
+                    </div>
+                    <img src="img/banner1-xl.webp" class="d-block w-50" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container d-flex">
+                    <div class="left-content">
+                        <h2>Title 2</h2>
+                        <p>Content for the second slide.</p>
+                    </div>
+                    <img src="img/video.mp4" class="d-block w-50" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Hero Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            }
+            
+        .hero-container {
+            padding-top: 56px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            
+            .hero-slide {
+                min-height: calc(100vh - 56px);
+                width: 100%;
+                }
+                
+                .hero-content {
+                    flex: 1;
+                    padding: 20px;
+                    }
+                    
+                    .hero-image {
+                        flex: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 20px;
+                        }
+                        
+                        .hero-image img {
+                            max-width: 100%;
+                            height: auto;
+                            }
+                            
+                            .subtitle {
+                                color: #888;
+                                font-size: 1rem;
+                                }
+
+                                .hero-content h1 {
+                                    font-size: 3.5rem;
+                                    font-weight: bold;
+                                    color: #fff;
+                                    line-height: 1.1;
+                                    }
+                                    
+                                    .hashtags {
+                                        color: #FFD700;
+                                        font-size: 1.2rem;
+                                        }
+                                        
+                                        .btn-outline-light {
+            border-radius: 0;
+            font-weight: bold;
+            border-width: 2px;
+            }
+            
+            @media (max-width: 768px) {
+                .hero-slide {
+                    flex-direction: column;
+                    text-align: center;
+                    }
+                    
+                    .hero-content h1 {
+                        font-size: 2rem;
+                        }
+                        }
+                    </style>
+                </head>
+                <body>
+                    
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">Insomniacs</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="hero-container">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center justify-content-center hero-slide">
+                        <div class="hero-content">
+                            <h5 class="subtitle">Absolute CX by Insomniacs Presents</h5>
+                            <h1>India's First Conversational AI for Real Estate</h1>
+                            <p class="hashtags">#PreSalesOnSteroids ACX Convo AI</p>
+                            <a href="#" class="btn btn-outline-light mt-3">Know More →</a>
+                        </div>
+                        <div class="hero-image">
+                            <img src="img/banner1-xl.webp"
+                            class="d-block img-fluid" alt="Image 1">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center hero-slide">
+                        <div class="hero-content">
+                            <h5 class="subtitle">Another Great Product</h5>
+                            <h1>Transforming Customer Experience</h1>
+                            <p class="hashtags">#AIpowered #VirtualAssistant</p>
+                            <a href="#" class="btn btn-outline-light mt-3">Learn More →</a>
+                        </div>
+                        <div class="hero-image">
+                            <video src="img/video.mp4" class="d-block img-fluid" alt="Image 2"  autoplay loop muted></video>
+                                
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- ====carousel img slide -->
+<!-- <div id="Carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex align-items-center justify-content-center hero-slide">
+                            <div class="carousel-image">
+                                <img src="photo/awards-img-2.webp"  alt="Image 1" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item ">
+                        <div class="d-flex align-items-center justify-content-center hero-slide">
+                            <div class="carousel-image">
+                                <img src="photo/awards-img-4.webp"  alt="Image 1" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item ">
+                        <div class="d-flex align-items-center justify-content-center hero-slide">
+                            <div class="carousel-image">
+                                <img src="photo/sleepless-rangers-beat.webp"  alt="Image 1" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pamplate - 2</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="Modal.css">
+    <link rel="stylesheet" href="Media.css">
+<style>
+    /* General styling for the panel and the button */
+.hidden {
+    display: none;
+}
+
+#utilityPanel {
+    position: fixed; /* Keep it in view */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    color: white;
+    z-index: 1000; /* Ensure it's on top of everything */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#fixButton {
+    /* Base setting: hide the button */
+    /* Other button styling... */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* ⚠️ Media Query: Button only appears on screens 700px wide or less ⚠️ */
+@media (max-width: 700px) {
+    #fixButton {
+        display: block; /* Overrides the base setting to show the button */
+    }
+}
+</style>
+</head>
+
+<body>
+    <!-- <div class="con-1">
+
+        <div class="left1">
+            <div id="Carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex align-items-center justify-content-center hero-slide">
+                            <div class="content content1 ">
+                                <p class="subtitle h5">Absolute CX by Insomniacs Presents</p>
+                                <p class="h1 first-h1">India's First Conversational </p>
+                                <p class="text-yellow">AI for Real Estate</p>
+                                <p class="hashtags">#PreSalesOnSteroids ACX Convo AI</p>
+                                <a href="#" class="radius btn btn-outline-light mt-3">Know More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item ">
+                    <div class="d-flex align-items-center justify-content-center hero-slide">
+                        <div class="content ">
+                            <p class="carousel-text">Real Estate Operations & Campaigns</p>
+                            <p class="h1 text-warning">Amplified</p>
+                            <p class="h4">india's only real Estate marketing, data analytics and
+                                technology network</p>
+                            <a href="#" class="radius btn btn-outline-light mt-3">Learn More →</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="right1">
+
+
+            <div id="Carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex align-items-center justify-content-center hero-slide">
+                            <div class="carousel-image">
+                                <img src="img/banner1-xl.webp" class="d-block img-fluid" alt="Image 1" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item ">
+                        <div class="d-flex align-items-center justify-content-center hero-slide">
+
+                            <div class="carousel-video">
+                                <video src="img/video.mp4" class="video-fluid" alt="Image 2" autoplay loop
+                                    muted></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="Carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+            <div class="carousel-inner">
+               
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center justify-content-center hero-slide">
+                        <div class="content content1 ">
+                            <p class="subtitle h5">Absolute CX by Insomniacs Presents</p>
+                            <p class="h1 first-h1">India's First Conversational </p>
+                            <p class="text-yellow">AI for Real Estate</p>
+                            <p class="hashtags">#PreSalesOnSteroids ACX Convo AI</p>
+                            <a href="#" class="radius btn btn-outline-light mt-3">Know More →</a>
+                        </div>
+                        <div class="carousel-image">
+                            <img src="img/banner1-xl.webp" class="d-block img-fluid" alt="Image 1" />
+                        </div>
+                    </div>
+                </div>
+
+                 
+                <div class="carousel-item ">
+                    <div class="d-flex align-items-center justify-content-center hero-slide">
+                        <div class="content ">
+                            <p class="carousel-text">Real Estate Operations & Campaigns</p>
+                            <p class="h1 text-warning">Amplified</p>
+                            <p class="h4">india's only real Estate marketing, data analytics and technology network</p>
+                            <a href="#" class="radius btn btn-outline-light mt-3">Learn More →</a>
+                        </div>
+                        <div class="carousel-video">
+                            <video src="img/video.mp4" class="video-fluid" alt="Image 2" autoplay loop muted></video>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div> -->
+
+    <button id="fixButton">Open Utility Panel</button>
+
+    <div id="utilityPanel" class="hidden">
+        <h2>Utility/Debug Panel</h2>
+        <p>This panel opens when the screen is narrow.</p>
+        <button id="closePanel">Close</button>
+    </div>
+</body>
+</html>

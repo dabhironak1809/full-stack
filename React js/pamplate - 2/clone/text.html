@@ -1,0 +1,319 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>Content Replacement on Hover</title>
+<style>
+.hover-box {
+  padding: 15px;
+  border: 2px solid #3498db;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s;
+  width: 300px;
+  text-align: center;
+}
+.hover-box:hover {
+  background-color: #e6e6e6;
+}
+</style>
+</head>
+<body>
+
+<p id="content-area" class="hover-box">
+  This is the **old content**. Hover your mouse over me!
+</p>
+
+<script>
+// 1. Get the element by its ID
+const contentElement = document.getElementById('content-area');
+
+// 2. Define the original and new text
+// Store the *initial* content to ensure it's exactly what was in the HTML
+const oldContent = contentElement.innerHTML;
+const newContent = "✨ You found the **new content**! Move the mouse away to see the old one return.";
+
+// 3. Function to replace content on hover
+function showNewContent() {
+  contentElement.innerHTML = newContent;
+}
+
+// 4. Function to restore the old content when not hovering
+function restoreOldContent() {
+  contentElement.innerHTML = oldContent;
+}
+
+// 5. Attach the functions to the hover events
+contentElement.onmouseenter = showNewContent;
+contentElement.onmouseleave = restoreOldContent;
+</script>
+
+</body>
+</html> -->
+
+<!-- =========== -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+        /* --- General Container Styling --- */
+        .content-container {
+            /* Gives the boxes some visual space */
+            border: 2px solid #3498db;
+            padding: 15px;
+            margin-bottom: 15px;
+            width: 300px;
+            min-height: 50px;
+            /* Important to prevent collapse on text swap */
+            cursor: pointer;
+            background-color: #ecf0f1;
+        }
+
+        /* --- Default State (Mouse NOT Hovering) --- */
+
+        /* The original text is visible */
+        .content-container .original-text {
+            color: #2c3e50;
+            font-weight: bold;
+            display: block;
+            /* Make sure it shows up */
+            margin: 0;
+        }
+
+        /* The new text is HIDDEN */
+        .content-container .hover-text {
+            color: red;
+            font-weight: bold;
+            display: none;
+            /* Hides the hover text */
+            margin: 0;
+        }
+
+
+        /* --- Hover State (Mouse IS Hovering) --- */
+
+        /* When the parent container is hovered: */
+
+        /* 1. HIDE the original text */
+        .content-container:hover .original-text {
+            display: none;
+        }
+
+        /* 2. SHOW the new text */
+        .content-container:hover .hover-text {
+            display: block;
+            /* Makes the hover text appear */
+        }
+
+        /* Optional: Add a smooth transition to the container itself (e.g., background color) */
+        .content-container {
+            transition: background-color 0.3s ease;
+        }
+
+        .content-container:hover {
+            background-color: #c5e1ff;
+            /* Light blue background on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <p class="original-text">
+            Container 1: Hover here to see the new message!
+        </p>
+        <p class="hover-text">
+            This is the NEW content for the first box!
+        </p>
+    </div>
+
+    <div class="content-container">
+        <p class="original-text">
+            Container 2: Put your mouse over me!
+        </p>
+        <p class="hover-text">
+            You successfully replaced the text in Container 2.
+        </p>
+    </div>
+
+    <div class="content-container">
+        <p class="original-text">
+            Container 3: The final hover challenge!
+        </p>
+        <p class="hover-text">
+            Text swap complete! The old text will return when you leave.
+        </p>
+    </div>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>Three Content Replacements on Hover (JS)</title>
+<style>
+/* Re-using the excellent CSS */
+.hover-box {
+  padding: 15px;
+  border: 2px solid #3498db;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s;
+  width: 300px;
+  text-align: center;
+  margin-bottom: 10px; /* Space out the paragraphs */
+  min-height: 50px; /* Prevents vertical shift on content swap */
+}
+.hover-box:hover {
+  background-color: #c5e1ff; /* Slightly lighter blue on hover */
+}
+.current-content {
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<p class="hover-box js-swap-content" data-new-text="🎉 New content shown for the **first box**!">
+  <span class="current-content">Paragraph 1: Hover over me!</span>
+</p>
+
+<p class="hover-box js-swap-content" data-new-text="✅ This is the text swap for **Paragraph 2**! Old text will return.">
+  <span class="current-content">Paragraph 2: I hold the original information.</span>
+</p>
+
+<p class="hover-box js-swap-content" data-new-text="💡 Look, the text changed for **Paragraph 3**! Done with JavaScript.">
+  <span class="current-content">Paragraph 3: JavaScript handles this content change.</span>
+</p>
+
+<script>
+// 1. Get ALL elements that need the swap functionality
+const contentBoxes = document.querySelectorAll('.js-swap-content');
+
+// 2. Map to store the original text for each element
+const originalContentMap = new Map();
+
+// 3. Define the swap function
+function handleMouseOver(event) {
+    const box = event.currentTarget; // The element the listener is attached to
+    
+    // Store original text if it hasn't been saved yet
+    if (!originalContentMap.has(box)) {
+        originalContentMap.set(box, box.innerHTML);
+    }
+
+    // Get the new text from the data attribute
+    const newText = box.getAttribute('data-new-text');
+    
+    // Replace the content
+    if (newText) {
+        box.innerHTML = `<span class="current-content">${newText}</span>`;
+    }
+}
+
+// 4. Define the restore function
+function handleMouseOut(event) {
+    const box = event.currentTarget; // The element the listener is attached to
+    
+    // Restore the original text from the map
+    if (originalContentMap.has(box)) {
+        box.innerHTML = originalContentMap.get(box);
+    }
+}
+
+// 5. Attach the event listeners to ALL selected boxes
+contentBoxes.forEach(box => {
+    box.addEventListener('mouseenter', handleMouseOver);
+    box.addEventListener('mouseleave', handleMouseOut);
+});
+</script>
+
+</body>
+</html> -->
+
+<!-- navigation scroll to change background color
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar {
+  background-color: transparent;
+  position: fixed; /* Keep it at the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px; /* Example padding */
+}
+
+/* New class to be added by JavaScript */
+.scrolled {
+  background-color: black !important;
+}
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+  </nav>
+
+<div style="height: 2000px;">
+</div>
+
+<script>
+    window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  const navbar = document.getElementById("navbar");
+  // Define the scroll distance before the color change (e.g., 50 pixels)
+  const scrollThreshold = 50;
+
+  if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+    // User has scrolled down past the threshold
+    navbar.classList.add("scrolled");
+  } else {
+    // User is at the top of the page
+    navbar.classList.remove("scrolled");
+  }
+}
+// ==== second scroll function define . 
+// document.addEventListener('DOMContentLoaded', function() {
+//   const mainNav = document.getElementById('mainNav');
+//   // Define how far the user needs to scroll before the color changes (e.g., 80 pixels)
+//   const scrollThreshold = 80;
+
+//   function handleScroll() {
+//     // Check if the vertical scroll position is greater than the threshold
+//     if (window.scrollY >= scrollThreshold) {
+//       // Add the black background class
+//       mainNav.classList.add('navbar-scrolled');
+//     } else {
+//       // Remove the black background class
+//       mainNav.classList.remove('navbar-scrolled');
+//     }
+//   }
+
+//   // Attach the function to the scroll event
+//   window.addEventListener('scroll', handleScroll);
+
+//   // Run it once on load in case the user reloads the page while already scrolled down
+//   handleScroll();
+// });
+// ====
+</script>
+</body>
+</html>
