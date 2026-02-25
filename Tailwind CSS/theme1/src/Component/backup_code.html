@@ -1,0 +1,165 @@
+
+                {/* container for card  */}
+
+                {/* <div className="max-w-7xl mx-auto px-2 grid sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center"> */}
+                {/* <div className="mx-auto px-4 sm:px-7 md:px-10 lg:px-25 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-5 md:gap-5   place-items-center lg:mt-3"> */}
+                <div className="mx-auto px-5 sm:px-10 md:px-12 lg:px-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 place-items-center mt-6">
+
+                    {/* card 1 */}
+                    <div className="relative w-full bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.15)] overflow-hidden group min-h-[440px] sm:min-h-[480px] flex flex-col p-0">
+                        <span className="absolute top-0 right-0 w-12 h-12 rounded-bl-full bg-sky-100 z-0"></span>
+                        <span className="absolute inset-0 bg-[#1f5d87] scale-0 origin-top-right transition-transform duration-300 ease-out group-hover:scale-[2.5]"></span>
+
+                        <div className="relative z-10 p-7 sm:p-10">
+                            <div className='flex items-center gap-4'>
+                                <img src='/service/c1/1.png' className='h-14 w-14 sm:h-17.5 sm:w-17.5 shrink-0' alt="icon" />
+                                <h3 className='text-[20px] sm:text-[22px] font-bold text-gray-700 group-hover:text-white transition-colors'>App Development</h3>
+                            </div>
+                            <ul className='mt-8 space-y-5 px-1'>
+                                {['Flutter', 'Android App', 'IOS App', 'Kotlin', 'React Native'].map((item, index) => (
+                                    <li key={index} className='flex items-center gap-5'>
+                                        <img src={`/service/c1/${['a', 'b', 'c', 'd', 'e'][index]}.svg`} className='h-7 w-7 shrink-0' alt="icon" />
+                                        <span className='group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors'>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* card 2 */}
+                    <div className="relative w-full bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.15)] overflow-hidden group min-h-[440px] sm:min-h-[480px] flex flex-col">
+                        <span className="absolute top-0 right-0 w-12 h-12 rounded-bl-full bg-sky-100 z-0"></span>
+                        <span className="absolute inset-0 bg-[#1f5d87] scale-0 origin-top-right transition-transform duration-300 ease-out group-hover:scale-[2.5]"></span>
+
+                        <div className="relative z-10 p-7 sm:p-10">
+                            <div className='flex items-center gap-4'>
+                                <img src='/service/c2/2.png' className='h-14 w-14 sm:h-17.5 sm:w-17.5 shrink-0' alt="icon" />
+                                <h3 className='text-[20px] sm:text-[22px] font-bold text-gray-700 group-hover:text-white transition-colors'>Web Development</h3>
+                            </div>
+                            <ul className='mt-8 space-y-5 px-1'>
+                                {['PHP', 'Wordpress', 'Flutter', 'Python', 'Magento', 'React JS'].map((item, index) => (
+                                    <li key={index} className='flex items-center gap-5'>
+                                        <img src={`/service/c2/${['h', 'i', 'a', 'j', 'magento', 'react-js'][index]}.svg`} className='h-7 w-7 shrink-0' alt="icon" />
+                                        <span className='group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors'>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* card 3 */}
+                    <div className="relative w-full bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.15)] overflow-hidden group min-h-[440px] sm:min-h-[480px] flex flex-col">
+                        <span className="absolute top-0 right-0 w-12 h-12 rounded-bl-full bg-sky-100 z-0"></span>
+                        <span className="absolute inset-0 bg-[#1f5d87] scale-0 origin-top-right transition-transform duration-300 ease-out group-hover:scale-[2.5]"></span>
+
+                        <div className="relative z-10 p-7 sm:p-10">
+                            <div className='flex items-center gap-4'>
+                                <img src='/service/c3/f.png' className='h-14 w-14 sm:h-17.5 sm:w-17.5 shrink-0' alt="icon" />
+                                <h3 className='text-[20px] sm:text-[22px] font-bold text-gray-700 group-hover:text-white transition-colors'>Desktop Application</h3>
+                            </div>
+                            <ul className='mt-8 space-y-5 px-1'>
+                                <li className='flex items-center gap-5'>
+                                    <img src='/service/c2/j.svg' className='h-7 w-7 shrink-0' alt="icon" />
+                                    <span className='group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors'>Python</span>
+                                </li>
+                                <li className='flex items-center gap-5'>
+                                    <img src='/service/c1/a.svg' className='h-7 w-7 shrink-0' alt="icon" />
+                                    <span className='group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors'>Flutter</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* ========= second container ===== */}
+
+                <div className="mx-auto px-6 sm:px-10 md:px-10 lg:px-12 xl:px-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8 lg:gap-5 xl:gap-10 place-items-center mt-7 lg:mt-5">
+
+                    {/* card 4 - IOT Embedded */}
+                    <div className="relative w-full bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.20)] overflow-hidden group min-h-[450px] sm:min-h-[480px] flex flex-col">
+                        <span className="peer absolute top-0 right-0 w-12 h-12 rounded-bl-full bg-sky-100 z-0"></span>
+                        <span className="absolute inset-0 bg-[#1f5d87] scale-0 origin-top-right transition-transform duration-300 ease-out group-hover:scale-[2.5]"></span>
+
+                        <div className="relative z-10 p-6 sm:p-8 xl:p-10">
+                            <div className="flex items-center gap-3 xl:gap-4">
+                                <img src="/service/c4/4.png" className="h-14 w-14 xl:h-17.5 xl:w-17.5 shrink-0" alt="icon" />
+                                <h3 className="text-[19px] sm:text-[20px] xl:text-[22px] font-bold text-gray-700 group-hover:text-white transition-colors">IOT Embedded</h3>
+                            </div>
+
+                            <ul className="mt-6 space-y-5 px-1 sm:px-2">
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c4/k.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">IOT Apps</span>
+                                </li>
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c4/n.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">Embedded Software</span>
+                                </li>
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c4/o.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">IoT Hardware Prototyping</span>
+                                </li>
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c4/m.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">IOT Dashboard and Analytics</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* card 5 - Digital Marketing */}
+                    <div className="relative w-full bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.20)] overflow-hidden group min-h-[450px] sm:min-h-[480px] flex flex-col">
+                        <span className="peer absolute top-0 right-0 w-12 h-12 rounded-bl-full bg-sky-100 z-0"></span>
+                        <span className="absolute inset-0 bg-[#1f5d87] scale-0 origin-top-right transition-transform duration-300 ease-out group-hover:scale-[2.5]"></span>
+
+                        <div className="relative z-10 p-6 sm:p-8 xl:p-10">
+                            <div className="flex items-center gap-3 xl:gap-4">
+                                <img src="/service/c5/5.png" className="h-14 w-14 xl:h-17.5 xl:w-17.5 shrink-0" alt="icon" />
+                                <h3 className="text-[19px] sm:text-[20px] xl:text-[22px] font-bold text-gray-700 group-hover:text-white transition-colors">Digital Marketing</h3>
+                            </div>
+
+                            <ul className="mt-6 space-y-5 px-1 sm:px-2">
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c5/r.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">Social Media Marketing</span>
+                                </li>
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c5/t.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">Market Place Listing</span>
+                                </li>
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c5/u.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">Business Listing</span>
+                                </li>
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c5/v.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">Survey</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* card 6 - API */}
+                    <div className="relative w-full bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.20)] overflow-hidden group min-h-[450px] sm:min-h-[480px] flex flex-col">
+                        <span className="peer absolute top-0 right-0 w-12 h-12 rounded-bl-full bg-sky-100 z-0"></span>
+                        <span className="absolute inset-0 bg-[#1f5d87] scale-0 origin-top-right transition-transform duration-300 ease-out group-hover:scale-[2.5]"></span>
+
+                        <div className="relative z-10 p-6 sm:p-8 xl:p-10">
+                            <div className="flex items-center gap-3 xl:gap-4">
+                                <img src="/service/c6/6.png" className="h-14 w-14 xl:h-17.5 xl:w-17.5 shrink-0" alt="icon" />
+                                <h3 className="text-[19px] sm:text-[20px] xl:text-[22px] font-bold text-gray-700 group-hover:text-white transition-colors">API</h3>
+                            </div>
+
+                            <ul className="mt-6 space-y-5 px-1 sm:px-2">
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c6/p.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">WhatsApp E-commerce</span>
+                                </li>
+                                <li className="flex items-center gap-4 sm:gap-6">
+                                    <img src="/service/c6/q.svg" className="h-6 w-6 shrink-0" alt="icon" />
+                                    <span className="group-hover:text-white font-semibold text-[16px] sm:text-[18px] text-gray-700 transition-colors">Custom API</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>

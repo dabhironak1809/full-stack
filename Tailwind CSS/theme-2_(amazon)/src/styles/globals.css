@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  /* background: var(--background); */
+  background-color: #e3e6e6;
+  /* color: var(--foreground); */
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+
+
+/* Common styles for arrows */
+/* .slick-arrow {
+  width: 3rem !important;
+  height: 5rem !important;
+  background-color: white !important;
+  border-radius: 5px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 10 !important;
+  cursor: pointer !important;
+  top: 40% !important;
+  transform: translateY(-50%) !important;
+  opacity: 1 !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+} */
+
+/* Dark arrow color */
+.slick-arrow::before {
+  /* font-size: 28px;
+  color: #444 !important; */
+  /* dark gray arrow */
+}
+
+/* Hover effect */
+/* .slick-arrow:hover {
+  background-color: #f0f0f0 !important;
+  box-shadow: 0 6px 12px rgba(255, 252, 252, 0.25) !important;
+} */
+
+/* Positioning arrows */
+/* .slick-prev {
+  left: 10px !important;
+  z-index: 15;
+}
+
+.slick-next {
+  right: 10px !important;
+  z-index: 15;
+}
+
+
+@media (max-width:500px) {
+  .slick-arrow {
+
+    width: 2.5rem !important;
+
+    height: 4rem !important;
+  background-color: #ffffff85 !important;
+
+  }
+}
+@media (max-width:300px) {
+  .slick-arrow {
+
+    width: 1.5rem !important;
+
+    height: 3rem !important;
+  background-color: #ffffff85 !important;
+
+  }
+} */
